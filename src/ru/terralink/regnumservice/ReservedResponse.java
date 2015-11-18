@@ -2,11 +2,7 @@
 package ru.terralink.regnumservice;
 
 import javax.xml.bind.JAXBElement;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElementRef;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.*;
 
 
 /**
@@ -19,7 +15,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="ReservedResult" type="{http://schemas.datacontract.org/2004/07/SAPDM.X5.Web.RegNumbers}ArrayOfRegNumberRest" minOccurs="0"/>
+ *         &lt;element name="ReservedResult" type="{http://schemas.datacontract.org/2004/07/NNxRegNumberService}ArrayOfRegNumber" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -36,17 +32,17 @@ import javax.xml.bind.annotation.XmlType;
 public class ReservedResponse {
 
     @XmlElementRef(name = "ReservedResult", namespace = "http://tempuri.org/", type = JAXBElement.class, required = false)
-    protected JAXBElement<ArrayOfRegNumberRest> reservedResult;
+    protected JAXBElement<ArrayOfRegNumber> reservedResult;
 
     /**
      * Gets the value of the reservedResult property.
      * 
      * @return
      *     possible object is
-     *     {@link JAXBElement }{@code <}{@link ArrayOfRegNumberRest }{@code >}
+     *     {@link JAXBElement }{@code <}{@link ArrayOfRegNumber }{@code >}
      *     
      */
-    public JAXBElement<ArrayOfRegNumberRest> getReservedResult() {
+    public JAXBElement<ArrayOfRegNumber> getReservedResult() {
         return reservedResult;
     }
 
@@ -55,10 +51,10 @@ public class ReservedResponse {
      * 
      * @param value
      *     allowed object is
-     *     {@link JAXBElement }{@code <}{@link ArrayOfRegNumberRest }{@code >}
+     *     {@link JAXBElement }{@code <}{@link ArrayOfRegNumber }{@code >}
      *     
      */
-    public void setReservedResult(JAXBElement<ArrayOfRegNumberRest> value) {
+    public void setReservedResult(JAXBElement<ArrayOfRegNumber> value) {
         this.reservedResult = value;
     }
 

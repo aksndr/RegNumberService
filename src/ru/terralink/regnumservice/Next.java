@@ -2,12 +2,7 @@
 package ru.terralink.regnumservice;
 
 import javax.xml.bind.JAXBElement;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlElementRef;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.*;
 
 
 /**
@@ -20,10 +15,10 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="TemplateName" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="Tags" type="{http://schemas.microsoft.com/2003/10/Serialization/Arrays}ArrayOfKeyValueOfstringstring" minOccurs="0"/>
- *         &lt;element name="Reserve" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="Comment" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="templateName" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="tags" type="{http://schemas.microsoft.com/2003/10/Serialization/Arrays}ArrayOfKeyValueOfstringstring" minOccurs="0"/>
+ *         &lt;element name="reserve" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
+ *         &lt;element name="comment" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -42,13 +37,12 @@ import javax.xml.bind.annotation.XmlType;
 @XmlRootElement(name = "Next")
 public class Next {
 
-    @XmlElementRef(name = "TemplateName", namespace = "http://tempuri.org/", type = JAXBElement.class, required = false)
+    @XmlElementRef(name = "templateName", namespace = "http://tempuri.org/", type = JAXBElement.class, required = false)
     protected JAXBElement<String> templateName;
-    @XmlElementRef(name = "Tags", namespace = "http://tempuri.org/", type = JAXBElement.class, required = false)
+    @XmlElementRef(name = "tags", namespace = "http://tempuri.org/", type = JAXBElement.class, required = false)
     protected JAXBElement<ArrayOfKeyValueOfstringstring> tags;
-    @XmlElement(name = "Reserve")
     protected Boolean reserve;
-    @XmlElementRef(name = "Comment", namespace = "http://tempuri.org/", type = JAXBElement.class, required = false)
+    @XmlElementRef(name = "comment", namespace = "http://tempuri.org/", type = JAXBElement.class, required = false)
     protected JAXBElement<String> comment;
 
     /**

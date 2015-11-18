@@ -1,7 +1,9 @@
 package ru.terralink.regnumclient;
 
-import ru.terralink.regnumservice.RegNumberRest;
+import ru.terralink.regnumservice.RegNumber;
 
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -11,11 +13,17 @@ import java.util.Map;
 public class Client {
 
     public Map getRegNum(){
-        ru.terralink.regnumservice.IRegNumberService service = new ru.terralink.regnumservice.RegNumberService().getBasicHttpBindingIRegNumberService();
+        URL serviceURL = null;
+        try {
+            serviceURL = new URL("http://ot-nntest.terralink.ru/SAPDM.Web.RegNumbers/Service/RegNumberService.svc?wsdl");
+        } catch (MalformedURLException e) {
+            return failed(e.getMessage());
+        }
+        ru.terralink.regnumservice.IService service = new ru.terralink.regnumservice.Service(serviceURL).getBasicHttpBindingIService();
         int i = 0;
         try {
-            RegNumberRest r = service.next(null,null,null,null);
-            i = r.getId();
+            RegNumber r = service.next(null, null, null, null);
+            i = r.getID();
         } catch (Exception e){
             return failed(e.getMessage());
         }

@@ -2,11 +2,7 @@
 package ru.terralink.regnumservice;
 
 import javax.xml.bind.JAXBElement;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElementRef;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.*;
 
 
 /**
@@ -19,7 +15,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="NextResult" type="{http://schemas.datacontract.org/2004/07/SAPDM.X5.Web.RegNumbers}RegNumberRest" minOccurs="0"/>
+ *         &lt;element name="NextResult" type="{http://schemas.datacontract.org/2004/07/NNxRegNumberService}RegNumber" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -36,17 +32,17 @@ import javax.xml.bind.annotation.XmlType;
 public class NextResponse {
 
     @XmlElementRef(name = "NextResult", namespace = "http://tempuri.org/", type = JAXBElement.class, required = false)
-    protected JAXBElement<RegNumberRest> nextResult;
+    protected JAXBElement<RegNumber> nextResult;
 
     /**
      * Gets the value of the nextResult property.
      * 
      * @return
      *     possible object is
-     *     {@link JAXBElement }{@code <}{@link RegNumberRest }{@code >}
+     *     {@link JAXBElement }{@code <}{@link RegNumber }{@code >}
      *     
      */
-    public JAXBElement<RegNumberRest> getNextResult() {
+    public JAXBElement<RegNumber> getNextResult() {
         return nextResult;
     }
 
@@ -55,10 +51,10 @@ public class NextResponse {
      * 
      * @param value
      *     allowed object is
-     *     {@link JAXBElement }{@code <}{@link RegNumberRest }{@code >}
+     *     {@link JAXBElement }{@code <}{@link RegNumber }{@code >}
      *     
      */
-    public void setNextResult(JAXBElement<RegNumberRest> value) {
+    public void setNextResult(JAXBElement<RegNumber> value) {
         this.nextResult = value;
     }
 
