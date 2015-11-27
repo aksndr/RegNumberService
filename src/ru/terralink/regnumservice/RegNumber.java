@@ -39,13 +39,13 @@ import javax.xml.bind.annotation.XmlType;
 })
 public class RegNumber {
 
-    @XmlElementRef(name = "Comment", namespace = "http://schemas.datacontract.org/2004/07/NNxRegNumberService", type = JAXBElement.class, required = false)
+    @XmlElementRef(name = "Comment", namespace = "http://schemas.datacontract.org/2004/07/NNxRegNumberService", type = String.class, required = false)
     protected String comment;
-    @XmlElementRef(name = "ID", namespace = "http://schemas.datacontract.org/2004/07/NNxRegNumberService", type = JAXBElement.class, required = false)
+    @XmlElementRef(name = "ID", namespace = "http://schemas.datacontract.org/2004/07/NNxRegNumberService", type = Integer.class, required = false)
     protected Integer id;
-    @XmlElementRef(name = "Key", namespace = "http://schemas.datacontract.org/2004/07/NNxRegNumberService", type = JAXBElement.class, required = false)
+    @XmlElementRef(name = "Key", namespace = "http://schemas.datacontract.org/2004/07/NNxRegNumberService", type = String.class, required = false)
     protected String key;
-    @XmlElementRef(name = "Value", namespace = "http://schemas.datacontract.org/2004/07/NNxRegNumberService", type = JAXBElement.class, required = false)
+    @XmlElementRef(name = "Value", namespace = "http://schemas.datacontract.org/2004/07/NNxRegNumberService", type = String.class, required = false)
     protected String value;
 
     /**
