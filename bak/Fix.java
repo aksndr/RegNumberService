@@ -1,7 +1,11 @@
 
 package ru.terralink.regnumservice;
 
-import javax.xml.bind.annotation.*;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
@@ -14,7 +18,7 @@ import javax.xml.bind.annotation.*;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="ID" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+ *         &lt;element name="Id" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -30,7 +34,7 @@ import javax.xml.bind.annotation.*;
 @XmlRootElement(name = "Fix")
 public class Fix {
 
-    @XmlElement(name = "ID")
+    @XmlElement(name = "Id")
     protected Integer id;
 
     /**
@@ -41,7 +45,7 @@ public class Fix {
      *     {@link Integer }
      *     
      */
-    public Integer getID() {
+    public Integer getId() {
         return id;
     }
 
@@ -53,7 +57,7 @@ public class Fix {
      *     {@link Integer }
      *     
      */
-    public void setID(Integer value) {
+    public void setId(Integer value) {
         this.id = value;
     }
 

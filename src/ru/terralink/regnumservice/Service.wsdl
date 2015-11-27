@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <wsdl:definitions name="Service" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
-                  xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
-                  xmlns:tns="http://tempuri.org/"
-                  xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
-        >
+                  xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://tempuri.org/"
+                  xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl">
     <wsdl:types>
         <xs:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/"
                    xmlns:xs="http://www.w3.org/2001/XMLSchema">
@@ -28,19 +26,16 @@
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
-            <xs:element name="Reserved">
+            <xs:element name="Fix">
                 <xs:complexType>
                     <xs:sequence>
-                        <xs:element minOccurs="0" name="templateName" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="ID" type="xs:int"/>
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
-            <xs:element name="ReservedResponse">
+            <xs:element name="FixResponse">
                 <xs:complexType>
-                    <xs:sequence>
-                        <xs:element minOccurs="0" name="ReservedResult" nillable="true" type="q3:ArrayOfRegNumber"
-                                    xmlns:q3="http://schemas.datacontract.org/2004/07/NNxRegNumberService"/>
-                    </xs:sequence>
+                    <xs:sequence/>
                 </xs:complexType>
             </xs:element>
         </xs:schema>
@@ -117,19 +112,13 @@
                    xmlns:tns="http://schemas.datacontract.org/2004/07/NNxRegNumberService">
             <xs:complexType name="RegNumber">
                 <xs:sequence>
-                    <xs:element name="Comment" nillable="true" type="xs:string"/>
-                    <xs:element name="ID" nillable="true" type="xs:int"/>
-                    <xs:element name="Value" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="Comment" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="ID" nillable="true" type="xs:int"/>
+                    <xs:element minOccurs="0" name="Key" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string"/>
                 </xs:sequence>
             </xs:complexType>
             <xs:element name="RegNumber" nillable="true" type="tns:RegNumber"/>
-            <xs:complexType name="ArrayOfRegNumber">
-                <xs:sequence>
-                    <xs:element minOccurs="0" maxOccurs="unbounded" name="RegNumber" nillable="true"
-                                type="tns:RegNumber"/>
-                </xs:sequence>
-            </xs:complexType>
-            <xs:element name="ArrayOfRegNumber" nillable="true" type="tns:ArrayOfRegNumber"/>
         </xs:schema>
     </wsdl:types>
     <wsdl:message name="IService_Next_InputMessage">
@@ -138,11 +127,11 @@
     <wsdl:message name="IService_Next_OutputMessage">
         <wsdl:part name="parameters" element="tns:NextResponse"/>
     </wsdl:message>
-    <wsdl:message name="IService_Reserved_InputMessage">
-        <wsdl:part name="parameters" element="tns:Reserved"/>
+    <wsdl:message name="IService_Fix_InputMessage">
+        <wsdl:part name="parameters" element="tns:Fix"/>
     </wsdl:message>
-    <wsdl:message name="IService_Reserved_OutputMessage">
-        <wsdl:part name="parameters" element="tns:ReservedResponse"/>
+    <wsdl:message name="IService_Fix_OutputMessage">
+        <wsdl:part name="parameters" element="tns:FixResponse"/>
     </wsdl:message>
     <wsdl:portType name="IService">
         <wsdl:operation name="Next">
@@ -150,11 +139,10 @@
             <wsdl:output wsaw:Action="http://tempuri.org/IService/NextResponse"
                          message="tns:IService_Next_OutputMessage"/>
         </wsdl:operation>
-        <wsdl:operation name="Reserved">
-            <wsdl:input wsaw:Action="http://tempuri.org/IService/Reserved"
-                        message="tns:IService_Reserved_InputMessage"/>
-            <wsdl:output wsaw:Action="http://tempuri.org/IService/ReservedResponse"
-                         message="tns:IService_Reserved_OutputMessage"/>
+        <wsdl:operation name="Fix">
+            <wsdl:input wsaw:Action="http://tempuri.org/IService/Fix" message="tns:IService_Fix_InputMessage"/>
+            <wsdl:output wsaw:Action="http://tempuri.org/IService/FixResponse"
+                         message="tns:IService_Fix_OutputMessage"/>
         </wsdl:operation>
     </wsdl:portType>
     <wsdl:binding name="BasicHttpBinding_IService" type="tns:IService">
@@ -168,8 +156,8 @@
                 <soap:body use="literal"/>
             </wsdl:output>
         </wsdl:operation>
-        <wsdl:operation name="Reserved">
-            <soap:operation soapAction="http://tempuri.org/IService/Reserved" style="document"/>
+        <wsdl:operation name="Fix">
+            <soap:operation soapAction="http://tempuri.org/IService/Fix" style="document"/>
             <wsdl:input>
                 <soap:body use="literal"/>
             </wsdl:input>

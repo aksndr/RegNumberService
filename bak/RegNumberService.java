@@ -9,6 +9,7 @@ import javax.xml.ws.WebEndpoint;
 import javax.xml.ws.WebServiceClient;
 import javax.xml.ws.WebServiceException;
 import javax.xml.ws.WebServiceFeature;
+import javax.xml.ws.spi.Provider;
 
 
 /**
@@ -17,7 +18,7 @@ import javax.xml.ws.WebServiceFeature;
  * Generated source version: 2.2
  * 
  */
-@WebServiceClient(name = "RegNumberService", targetNamespace = "http://tempuri.org/", wsdlLocation = "http://10.100.101.148/SAPDM.Web.RegNumbers/Service/RegNumberService.svc?singleWsdl")
+@WebServiceClient(name = "RegNumberService", targetNamespace = "http://tempuri.org/", wsdlLocation = "http://ot-nntest.terralink.ru/SAPDM.Web.RegNumbers/Service/RegNumberService.svc?wsdl")
 public class RegNumberService extends Service
 {
 
@@ -29,7 +30,7 @@ public class RegNumberService extends Service
         URL url = null;
         WebServiceException e = null;
         try {
-            url = new URL("http://10.100.101.148/SAPDM.Web.RegNumbers/Service/RegNumberService.svc?singleWsdl");
+            url = new URL("http://ot-nntest.terralink.ru/SAPDM.Web.RegNumbers/Service/RegNumberService.svc?wsdl");
         } catch (MalformedURLException ex) {
             e = new WebServiceException(ex);
         }
