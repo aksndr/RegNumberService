@@ -51,10 +51,10 @@ public class ObjectFactory {
     private final static QName _UnsignedLong_QNAME = new QName("http://schemas.microsoft.com/2003/10/Serialization/", "unsignedLong");
     private final static QName _Boolean_QNAME = new QName("http://schemas.microsoft.com/2003/10/Serialization/", "boolean");
     private final static QName _ArrayOfKeyValueOfstringstring_QNAME = new QName("http://schemas.microsoft.com/2003/10/Serialization/Arrays", "ArrayOfKeyValueOfstringstring");
+    private final static QName _NextResponseNextResult_QNAME = new QName("http://tempuri.org/", "NextResult");
     private final static QName _NextTags_QNAME = new QName("http://tempuri.org/", "tags");
     private final static QName _NextTemplateName_QNAME = new QName("http://tempuri.org/", "templateName");
     private final static QName _NextComment_QNAME = new QName("http://tempuri.org/", "comment");
-    private final static QName _NextResponseNextResult_QNAME = new QName("http://tempuri.org/", "NextResult");
     private final static QName _RegNumberID_QNAME = new QName("http://schemas.datacontract.org/2004/07/NNxRegNumberService", "ID");
     private final static QName _RegNumberComment_QNAME = new QName("http://schemas.datacontract.org/2004/07/NNxRegNumberService", "Comment");
     private final static QName _RegNumberValue_QNAME = new QName("http://schemas.datacontract.org/2004/07/NNxRegNumberService", "Value");
@@ -85,7 +85,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link FixResponse }
-     *
+     * 
      */
     public FixResponse createFixResponse() {
         return new FixResponse();
@@ -331,6 +331,15 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link RegNumber }{@code >}}
+     *
+     */
+    @XmlElementDecl(namespace = "http://tempuri.org/", name = "NextResult", scope = NextResponse.class)
+    public JAXBElement<RegNumber> createNextResponseNextResult(RegNumber value) {
+        return new JAXBElement<RegNumber>(_NextResponseNextResult_QNAME, RegNumber.class, NextResponse.class, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link ArrayOfKeyValueOfstringstring }{@code >}}
      * 
      */
@@ -358,15 +367,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link RegNumber }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://tempuri.org/", name = "NextResult", scope = NextResponse.class)
-    public JAXBElement<RegNumber> createNextResponseNextResult(RegNumber value) {
-        return new JAXBElement<RegNumber>(_NextResponseNextResult_QNAME, RegNumber.class, NextResponse.class, value);
-    }
-
-    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link Integer }{@code >}}
      * 
      */
@@ -377,6 +377,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
      */
     @XmlElementDecl(namespace = "http://schemas.datacontract.org/2004/07/NNxRegNumberService", name = "Comment", scope = RegNumber.class)
     public JAXBElement<String> createRegNumberComment(String value) {
@@ -385,6 +386,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
      */
     @XmlElementDecl(namespace = "http://schemas.datacontract.org/2004/07/NNxRegNumberService", name = "Value", scope = RegNumber.class)
     public JAXBElement<String> createRegNumberValue(String value) {
@@ -393,6 +395,7 @@ public class ObjectFactory {
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
      */
     @XmlElementDecl(namespace = "http://schemas.datacontract.org/2004/07/NNxRegNumberService", name = "Key", scope = RegNumber.class)
     public JAXBElement<String> createRegNumberKey(String value) {

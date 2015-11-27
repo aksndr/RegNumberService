@@ -39,82 +39,84 @@ import javax.xml.bind.annotation.XmlType;
 })
 public class RegNumber {
 
-    @XmlElementRef(name = "Comment", namespace = "http://schemas.datacontract.org/2004/07/NNxRegNumberService", type = String.class, required = false)
-    protected String comment;
-    @XmlElementRef(name = "ID", namespace = "http://schemas.datacontract.org/2004/07/NNxRegNumberService", type = Integer.class, required = false)
-    protected Integer id;
-    @XmlElementRef(name = "Key", namespace = "http://schemas.datacontract.org/2004/07/NNxRegNumberService", type = String.class, required = false)
-    protected String key;
-    @XmlElementRef(name = "Value", namespace = "http://schemas.datacontract.org/2004/07/NNxRegNumberService", type = String.class, required = false)
-    protected String value;
+    @XmlElementRef(name = "Comment", namespace = "http://schemas.datacontract.org/2004/07/NNxRegNumberService", type = JAXBElement.class, required = false)
+    protected JAXBElement<String> comment;
+    @XmlElementRef(name = "ID", namespace = "http://schemas.datacontract.org/2004/07/NNxRegNumberService", type = JAXBElement.class, required = false)
+    protected JAXBElement<Integer> id;
+    @XmlElementRef(name = "Key", namespace = "http://schemas.datacontract.org/2004/07/NNxRegNumberService", type = JAXBElement.class, required = false)
+    protected JAXBElement<String> key;
+    @XmlElementRef(name = "Value", namespace = "http://schemas.datacontract.org/2004/07/NNxRegNumberService", type = JAXBElement.class, required = false)
+    protected JAXBElement<String> value;
 
     /**
      * Gets the value of the comment property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link JAXBElement }{@code <}{@link String }{@code >}
      *     
      */
-    public String getComment() {
+    public JAXBElement<String> getComment() {
         return comment;
     }
 
     /**
      * Sets the value of the comment property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link JAXBElement }{@code <}{@link String }{@code >}
      *     
      */
-    public void setComment(String value) {
+    public void setComment(JAXBElement<String> value) {
         this.comment = value;
     }
 
     /**
      * Gets the value of the id property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link JAXBElement }{@code <}{@link Integer }{@code >}
      *     
      */
-    public Integer getID() {
+    public JAXBElement<Integer> getID() {
         return id;
     }
 
     /**
      * Sets the value of the id property.
-     *
+     * 
      * @param value
      *     allowed object is
      *     {@link JAXBElement }{@code <}{@link Integer }{@code >}
      *     
      */
-    public void setID(Integer value) {
+    public void setID(JAXBElement<Integer> value) {
         this.id = value;
     }
 
     /**
      * Gets the value of the key property.
-     *
+     * 
      * @return
      *     possible object is
      *     {@link JAXBElement }{@code <}{@link String }{@code >}
-     *
+     *     
      */
-    public String getKey() {
+    public JAXBElement<String> getKey() {
         return key;
     }
 
     /**
      * Sets the value of the key property.
      *
-     * @param value allowed object is
-     *              {@link JAXBElement }{@code <}{@link String }{@code >}
+     * @param value
+     *     allowed object is
+     *     {@link JAXBElement }{@code <}{@link String }{@code >}
+     *     
      */
-    public void setKey(String value) {
+    public void setKey(JAXBElement<String> value) {
         this.key = value;
     }
 
@@ -124,9 +126,9 @@ public class RegNumber {
      * @return
      *     possible object is
      *     {@link JAXBElement }{@code <}{@link String }{@code >}
-     *
+     *     
      */
-    public String getValue() {
+    public JAXBElement<String> getValue() {
         return value;
     }
 
@@ -136,9 +138,9 @@ public class RegNumber {
      * @param value
      *     allowed object is
      *     {@link JAXBElement }{@code <}{@link String }{@code >}
-     *
+     *     
      */
-    public void setValue(String value) {
+    public void setValue(JAXBElement<String> value) {
         this.value = value;
     }
 
